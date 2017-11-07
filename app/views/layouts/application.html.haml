@@ -7,8 +7,14 @@
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
 %body
-
-  - flash.each do |name, msg|
-    = content_tag :div, msg, class: "alert alert-#{name}" 
-
-  = yield
+  %header.main_header.clearfix
+    .wrapper
+      #logo
+        %p All Forum
+      #buttons
+        = link_to "New Post", new_post_path
+  .wrapper
+    - flash.each do |name, msg|
+      = content_tag :div, msg, class: "alert alert-#{name}"
+  .wrapper
+    = yield
