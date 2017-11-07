@@ -2,4 +2,5 @@
 %p
   Submitted at
   = time_ago_in_words(post.created_at)
-
+  by
+  = post.user.email

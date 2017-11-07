@@ -2,5 +2,6 @@
 %p= @post.content
 
 = link_to 'Back', root_path
-= link_to 'Edit', edit_post_path
-= link_to 'Delete', post_path, method: :delete, data: { confirm: 'Are you sure?' } 
+- if @post.user == current_user
+  = link_to 'Edit', edit_post_path
+  = link_to 'Delete', post_path, method: :delete, data: { confirm: 'Are you sure?' } 
