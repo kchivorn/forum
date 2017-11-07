@@ -10,9 +10,13 @@
   %header.main_header.clearfix
     .wrapper
       #logo
-        %p All Forum
+        %p= link_to 'All Forum', root_path
       #buttons
-        = link_to "New Post", new_post_path
+        -if user_signed_in?
+          = link_to "New Post", new_post_path
+        - else
+          = link_to 'Log in', new_user_session_path
+          = link_to 'Register', new_user_registration_path
   .wrapper
     - flash.each do |name, msg|
       = content_tag :div, msg, class: "alert alert-#{name}"

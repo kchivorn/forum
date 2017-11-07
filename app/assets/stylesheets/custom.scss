@@ -29,6 +29,10 @@ body {
       font-weight: 700;
       letter-spacing: -1px;
       font-size: 1.2rem;
+      a {
+        text-decoration: none;
+        color: #397cac;
+      }
     }
   }
   #buttons {
@@ -48,6 +52,7 @@ body {
 #posts {
   background: white;
   padding: 2em 5%;
+  margin: 2em auto;
   border-radius: 0.5em;
   .post {
     margin: 1em 0;
