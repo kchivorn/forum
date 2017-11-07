@@ -69,3 +69,22 @@ body {
     }
   }
 }
+
+#post_content {
+  background: white;
+  padding: 2em 5%;
+  margin: 2em auto;
+  border-radius: .5em;
+  h1 {
+    font-weight: 100;
+    font-size: 2em;
+    color: #396cac;
+    margin-top: 0;
+  }
+  p {
+    color: #828a92;
+    font-size: 0.9em;
+    font-weight: 100;
+    line-height: 1.5;
+  }
+}
