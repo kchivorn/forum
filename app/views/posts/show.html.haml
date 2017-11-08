@@ -4,12 +4,15 @@
 
   #comment
     %h2
-      = @post.comments.count
+      = @comments.count
       Comments
-    = render @post.comments
+    - if @comments.count > 0
+      = render @comments
 
     %h3 Reply the thread
+    - @comment = @post.comments.build
     = render 'comments/form'
+
   = link_to 'Back', root_path
   - if @post.user == current_user
     = link_to 'Edit', edit_post_path
