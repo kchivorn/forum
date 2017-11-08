@@ -2,7 +2,7 @@
   %h1= @post.title
   %p= @post.content
 
-  #comment
+  #comments
     %h2
       = @comments.count
       Comments
@@ -13,7 +13,9 @@
     - @comment = @post.comments.build
     = render 'comments/form'
 
-  = link_to 'Back', root_path
   - if @post.user == current_user
-    = link_to 'Edit', edit_post_path
-    = link_to 'Delete', post_path, method: :delete, data: { confirm: 'Are you sure?' }
+    %br
+    %hr
+    %br
+    = link_to 'Edit', edit_post_path, class: 'button'
+    = link_to 'Delete', post_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button'
