@@ -2,6 +2,14 @@
   %h1= @post.title
   %p= @post.content
 
+  #comment
+    %h2
+      = @post.comments.count
+      Comments
+    = render @post.comments
+
+    %h3 Reply the thread
+    = render 'comments/form'
   = link_to 'Back', root_path
   - if @post.user == current_user
     = link_to 'Edit', edit_post_path
